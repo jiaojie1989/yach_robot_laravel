@@ -25,7 +25,7 @@ class YachRobotServiceProvider extends ServiceProvider
      */
     public function boot() {
         $this->publishes([
-            __DIR__ . '/../config/yach/robot.php' => base_path('config/robot.php'),
+            __DIR__ . '/../config/robot.php' => base_path('config/yach/robot.php'),
         ]);
     }
 
