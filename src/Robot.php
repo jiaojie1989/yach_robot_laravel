@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Http;
 use Tal\Yach\Robot\Exception\ConfigNotFoundException;
 use Tal\Yach\Robot\Exception\SendFailException;
 use Tal\Yach\Robot\Message\Message;
+use Tal\Yach\Robot\Message\Text;
 
 /**
  * Description of Robot
@@ -51,9 +52,8 @@ class Robot
      * @return mixed
      */
     public function text($content = '') {
-        return $this->dingTalkService
-                        ->setTextMessage($content)
-                        ->send();
+        $message = new Text($content);
+        return $this->send($message);
     }
 
     protected function buildUrl() {
