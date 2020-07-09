@@ -35,18 +35,7 @@ class YachRobotServiceProvider extends ServiceProvider
      * @return void
      */
     public function register() {
-        $this->registerLaravelBindings();
-    }
-
-    /**
-     * Register Laravel bindings.
-     *
-     * @return void
-     */
-    protected function registerLaravelBindings() {
-        $this->app->singleton(DingTalk::class, function ($app) {
-            return new DingTalk($app['config']['ding']);
-        });
+        
     }
 
 }

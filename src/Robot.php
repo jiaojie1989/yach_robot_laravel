@@ -22,6 +22,7 @@ use Tal\Yach\Robot\Message\Text;
 class Robot
 {
 
+    const VERSION        = '0.1-dev';
     const ROBOT_ENDPOINT = 'https://yach-oapi.zhiyinlou.com/robot/send';
 
     protected static $robots = [];
@@ -62,11 +63,17 @@ class Robot
         return self::ROBOT_ENDPOINT . "?access_token={$this->config['token']}&timestamp={$ts}&sign={$sign}";
     }
 
+    protected function getUaHeader() {
+        return [
+            'user-agent' => "YachRobot" . self::VERSION . " " . \GuzzleHttp\default_user_agent(),
+        ];
+    }
+
     protected function send(Message $message) {
         $url  = $this->buildUrl();
         $data = $message->getBody();
         try {
-            $response = Http::asJson()->post($url, $data)->json();
+            $response = Http::withHeaders($this->getUaHeader())->asJson()->post($url, $data)->json();
             if (empty($response)) {
                 throw new SendFailException();
             }
