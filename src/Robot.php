@@ -77,7 +77,7 @@ class Robot
             throw new SendFailException();
         }
 
-        if (0 == $response['code']) {
+        if (200 == $response['code']) {
             return true;
         } else {
             throw new SendFailException($response['msg'], $response['code']);
