@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Tal\Yach\Robot\Exception;
+namespace Tal\Yach\Robot\Exceptions;
 
 /**
  * Description of ConfigNotFound

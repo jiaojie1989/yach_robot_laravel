@@ -9,10 +9,10 @@
 namespace Tal\Yach\Robot;
 
 use Illuminate\Support\Facades\Http;
-use Tal\Yach\Robot\Exception\ConfigNotFoundException;
-use Tal\Yach\Robot\Exception\SendFailException;
-use Tal\Yach\Robot\Message\Message;
-use Tal\Yach\Robot\Message\Text;
+use Tal\Yach\Robot\Exceptions\ConfigNotFoundException;
+use Tal\Yach\Robot\Exceptions\SendFailException;
+use Tal\Yach\Robot\Messages\Message;
+use Tal\Yach\Robot\Messages\Text;
 
 /**
  * Description of Robot

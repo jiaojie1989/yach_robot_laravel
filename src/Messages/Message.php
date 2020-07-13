@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Tal\Yach\Robot\Message;
+namespace Tal\Yach\Robot\Messages;
 
 /**
  * Description of Message
