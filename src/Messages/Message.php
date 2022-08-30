@@ -23,17 +23,18 @@ abstract class Message
         return $this->message;
     }
 
-    protected function makeAt($mobiles = [], $atAll = false) {
+    protected function makeAt($mobiles = [], $atAll = false, $workcodes = []) {
         return [
             'at' => [
                 'atMobiles' => $mobiles,
+                'atWorkCodes' => $workcodes,
                 'isAtAll'   => $atAll
             ]
         ];
     }
 
-    public function sendAt($mobiles = [], $atAll = false) {
-        $this->at = $this->makeAt($mobiles, $atAll);
+    public function sendAt($mobiles = [], $atAll = false, $workcodes = []) {
+        $this->at = $this->makeAt($mobiles, $atAll, $workcodes);
         return $this;
     }
 

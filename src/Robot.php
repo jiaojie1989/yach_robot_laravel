@@ -56,6 +56,12 @@ class Robot
         $message = new Text($content);
         return $this->send($message);
     }
+    
+    public function textWithAt($content = '', $mobiles = [], $workcodes = [], $atAll = false) {
+        $message = new Text($content);
+        $message->sendAt($mobiles, $atAll, $workcodes);
+        return $this->send($message);
+    }
 
     protected function buildUrl() {
         $ts   = '' . time() . '000';
